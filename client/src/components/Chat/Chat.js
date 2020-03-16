@@ -44,14 +44,17 @@ const Chat = props => {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
   };
+  const signOut = () => {
+    props.setAuth(false);
+  };
 
   return (
     <div>
       <div className="container">
         <div className="messages">
-          {messages.map(message => {
+          {messages.map((message, i) => {
             return (
-              <div>
+              <div key={i}>
                 <p>{message.user}</p>
                 <h1>{message.text}</h1>
               </div>
@@ -63,6 +66,8 @@ const Chat = props => {
           onChange={e => setMessage(e.target.value)}
           onKeyPress={e => (e.key === "Enter" ? sendMessage(e) : null)}
         />
+        <button onClick={e => sendMessage(e)}>Send</button>
+        <button onClick={e => signOut(e)}>Sign Out</button>
       </div>
     </div>
   );

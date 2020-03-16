@@ -1,0 +1,141 @@
+html,
+body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: none;
+}
+
+html {
+  background-color: #1f1a25;
+}
+
+h1,
+p,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Oswald;
+}
+
+.joinOuter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+input {
+  border: 0;
+  font-size: 14px;
+  outline: none;
+  background-color: transparent;
+  max-width: 150px;
+}
+
+.text-input-component {
+  border-bottom: 2px solid black;
+  text-align: center;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+.title {
+  text-align: center;
+}
+
+button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #00c7ec;
+  border: 1px solid #00c7ec;
+  border-radius: 5px;
+  padding: 10px 30px;
+  -webkit-box-shadow: 0 0 0 0 transparent;
+          box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 199, 236, 0.5);
+          box-shadow: 0 0 30px 0 rgba(0, 199, 236, 0.5);
+  background-color: #00c7ec;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover:before {
+  -webkit-animation: shine 0.5s 0s linear;
+          animation: shine 0.5s 0s linear;
+}
+
+button:active {
+  -webkit-box-shadow: 0 0 0 0 transparent;
+          box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+}
+
+button:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: white;
+  -webkit-box-shadow: 0 0 15px 3px white;
+          box-shadow: 0 0 15px 3px white;
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+}
+
+@-webkit-keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+/*# sourceMappingURL=styling.css.map */
