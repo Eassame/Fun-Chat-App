@@ -1,2 +1,2 @@
 # Fun-Chat-App
-Chat App using socket.io integration, node, express, react
+Chat App using socket.io integration, node, and react
