@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import FormInput from "../Inputs/FormInput";
 
 const Join = props => {
@@ -19,6 +19,7 @@ const Join = props => {
           placeholder="Name"
           className="joinInput"
           type="text"
+          name={"name"}
           onChange={e => setName(e.target.value)}
         />
 
@@ -26,7 +27,16 @@ const Join = props => {
           placeholder="Chat Room Name"
           className="joinInput"
           type="text"
+          name={"room"}
           onChange={e => setRoom(e.target.value)}
+          onKeyPress={e => {
+            console.log(e.key === "Enter");
+            console.log(name);
+            console.log(room);
+            if (e.key === "Enter" && name && room) {
+              props.history.push(`/chat?name=${name}&room=${room}`);
+            }
+          }}
         />
 
         <Link
@@ -42,4 +52,4 @@ const Join = props => {
   );
 };
 
-export default Join;
+export default withRouter(Join);
